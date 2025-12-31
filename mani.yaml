@@ -59,13 +59,13 @@ projects:
     path: ../web/static/btech
     url: git@github.com:Beta-Techno/btech.git
     desc: Static marketing site (Astro)
-    tags: [web, static]
+    tags: [web, static, infra]
 
   wiki:
     path: ../web/react/wiki
     url: git@github.com:Beta-Techno/wiki.git
     desc: React-based documentation/wiki frontend
-    tags: [web, react]
+    tags: [web, react, infra]
 
 commands:
   status:
