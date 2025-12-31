@@ -1,0 +1,107 @@
+version: 1
+
+projects:
+  anvil:
+    path: code/infra/anvil
+    url: git@github.com:Beta-Techno/anvil.git
+    desc: Ubuntu workstation/server bootstrap (Ansible)
+    tags: [infra, provisioning, dev, server]
+
+  bootstrap:
+    path: code/infra/bootstrap
+    url: git@github.com:Beta-Techno/boot.git
+    desc: Ubuntu autoinstall shim that hands off to Anvil
+    tags: [infra, installer, server]
+
+  harbor:
+    path: code/infra/harbor
+    url: git@github.com:Beta-Techno/harbor.git
+    desc: Stack manager + harborctl CLI for Docker Compose deployments
+    tags: [infra, platform, server]
+
+  lockbox:
+    path: code/infra/lockbox
+    url: git@github.com:Beta-Techno/lock.git
+    desc: SOPS-encrypted runtime config + lockctl renderer
+    tags: [infra, secrets, server]
+
+  key:
+    path: code/infra/key
+    url: git@github.com:Beta-Techno/key.git
+    desc: Bootstrap bundle store for Git identity, tokens, age keys
+    tags: [infra, secrets]
+
+  bricks:
+    path: code/infra/bricks
+    url: git@github.com:Beta-Techno/bricks.git
+    desc: Reusable containers and base images shared across stacks
+    tags: [infra, tooling]
+
+  ops:
+    path: code/infra/ops
+    url: git@github.com:Beta-Techno/ops.git
+    desc: Fleet operations glue (scripts, automation, runbooks)
+    tags: [infra, ops]
+
+  flakes:
+    path: code/infra/flakes
+    url: git@github.com:Beta-Techno/flakes.git
+    desc: Collection of Nix flakes to drive future bootstrap flow
+    tags: [infra, nix]
+
+  dotfiles:
+    path: code/infra/dotfiles
+    url: git@github.com:Beta-Techno/dotfiles.git
+    desc: Chezmoi source for cross-host shell/editor setup
+    tags: [infra, dev]
+
+commands:
+  status:
+    desc: Show terse git status
+    cmd: git status -sb
+
+  sync:
+    desc: Fast-forward to origin/main for repos that already exist
+    cmd: |
+      git fetch --all --prune
+      git pull --ff-only || true
+
+  bootstrap:
+    desc: Run project bootstrap scripts when present
+    cmd: |
+      if [ -x ./bootstrap.sh ]; then
+        ./bootstrap.sh
+      elif [ -x ./run.sh ]; then
+        ./run.sh
+      elif [ -f package.json ] && [ -n "$(command -v npm)" ]; then
+        npm install
+      fi
+
+  lockbox-render:
+    desc: Render env files for Harbor stacks via lockctl
+    target:
+      projects: [lockbox]
+    cmd: |
+      LOCKCTL_BIN=${LOCKCTL_BIN:-lockctl}
+      ENV=${LOCKBOX_ENV:-dev}
+      STACK=${LOCKBOX_STACK:-all}
+      OUT_DIR=${LOCKBOX_OUT:-$HOME/code/infra/harbor}
+      "$LOCKCTL_BIN" render --repo . --project harbor --env "$ENV" --stack "$STACK" --out "$OUT_DIR"
+
+  harbor-validate:
+    desc: Validate Harbor catalog against lockbox contracts
+    target:
+      projects: [harbor]
+    cmd: |
+      ENV=${HARBOR_ENV:-dev}
+      SOPS_AGE_KEY_FILE=${SOPS_AGE_KEY_FILE:?SOPS_AGE_KEY_FILE must be set}
+      go run ./cmd/harborctl catalog validate --env "$ENV"
+
+  bootstrap-all:
+    desc: Run sync + bootstrap for all infra repos
+    spec: custom
+    target:
+      tags: [infra]
+    commands:
+      - task: sync
+      - task: bootstrap
