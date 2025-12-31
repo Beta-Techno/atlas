@@ -51,6 +51,10 @@ projects:
 
   dotfiles:
     path: ../dotfiles
+    url: git@github.com:Beta-Techno/dotfiles.git
+    desc: Chezmoi source for cross-host shell/editor setup
+    tags: [infra, dev]
+
   btech:
     path: ../web/static/btech
     url: git@github.com:Beta-Techno/btech.git
@@ -62,9 +66,6 @@ projects:
     url: git@github.com:Beta-Techno/wiki.git
     desc: React-based documentation/wiki frontend
     tags: [web, react]
-    url: git@github.com:Beta-Techno/dotfiles.git
-    desc: Chezmoi source for cross-host shell/editor setup
-    tags: [infra, dev]
 
 commands:
   status:
