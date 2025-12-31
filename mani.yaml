@@ -117,3 +117,8 @@ commands:
     commands:
       - task: sync
       - task: bootstrap
+  devdoc:
+    path: ../web/nextjs/devdoc
+    url: git@github.com:Beta-Techno/devdoc.git
+    desc: Next.js developer documentation site
+    tags: [web, nextjs, infra]
