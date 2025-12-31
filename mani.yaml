@@ -2,55 +2,66 @@ version: 1
 
 projects:
   anvil:
-    path: code/infra/anvil
+    path: ../anvil
     url: git@github.com:Beta-Techno/anvil.git
     desc: Ubuntu workstation/server bootstrap (Ansible)
     tags: [infra, provisioning, dev, server]
 
   bootstrap:
-    path: code/infra/bootstrap
+    path: ../bootstrap
     url: git@github.com:Beta-Techno/boot.git
     desc: Ubuntu autoinstall shim that hands off to Anvil
     tags: [infra, installer, server]
 
   harbor:
-    path: code/infra/harbor
+    path: ../harbor
     url: git@github.com:Beta-Techno/harbor.git
     desc: Stack manager + harborctl CLI for Docker Compose deployments
     tags: [infra, platform, server]
 
   lockbox:
-    path: code/infra/lockbox
+    path: ../lockbox
     url: git@github.com:Beta-Techno/lock.git
     desc: SOPS-encrypted runtime config + lockctl renderer
     tags: [infra, secrets, server]
 
   key:
-    path: code/infra/key
+    path: ../key
     url: git@github.com:Beta-Techno/key.git
     desc: Bootstrap bundle store for Git identity, tokens, age keys
     tags: [infra, secrets]
 
   bricks:
-    path: code/infra/bricks
+    path: ../bricks
     url: git@github.com:Beta-Techno/bricks.git
     desc: Reusable containers and base images shared across stacks
     tags: [infra, tooling]
 
   ops:
-    path: code/infra/ops
+    path: ../ops
     url: git@github.com:Beta-Techno/ops.git
     desc: Fleet operations glue (scripts, automation, runbooks)
     tags: [infra, ops]
 
   flakes:
-    path: code/infra/flakes
+    path: ../flakes
     url: git@github.com:Beta-Techno/flakes.git
     desc: Collection of Nix flakes to drive future bootstrap flow
     tags: [infra, nix]
 
   dotfiles:
-    path: code/infra/dotfiles
+    path: ../dotfiles
+  btech:
+    path: ../web/static/btech
+    url: git@github.com:Beta-Techno/btech.git
+    desc: Static marketing site (Astro)
+    tags: [web, static]
+
+  wiki:
+    path: ../web/react/wiki
+    url: git@github.com:Beta-Techno/wiki.git
+    desc: React-based documentation/wiki frontend
+    tags: [web, react]
     url: git@github.com:Beta-Techno/dotfiles.git
     desc: Chezmoi source for cross-host shell/editor setup
     tags: [infra, dev]
