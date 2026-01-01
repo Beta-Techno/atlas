@@ -1,12 +1,13 @@
 # Mani Manifest — Infrastructure Workspace
 
-This repository owns `mani.yaml`, the manifest Anvil uses to clone and orchestrate every infrastructure repo (bootstrap → anvil → lockbox → harbor). Keep this repo checked out at `code/infra/mani`; when `mani sync` runs it creates sibling directories such as `code/infra/anvil`, `code/infra/harbor`, etc.
+This repository owns `mani.yaml`, the manifest Anvil uses to clone and orchestrate every infrastructure repo (bootstrap → anvil → lockbox → harbor). Keep this repo checked out at `~/org/Beta-Techno/infra/atlas`; when `mani sync` runs it creates sibling directories such as `~/org/Beta-Techno/infra/anvil`, `~/org/Beta-Techno/infra/harbor`, etc.
 
 ```
-code/
+~/org/Beta-Techno/
   infra/
+    atlas/       # this repository
     anvil/       # provisioning playbooks & roles
-    bootstrap/   # Ubuntu autoinstall shim that calls anvil
+    boot/        # Ubuntu autoinstall shim that calls anvil
     lockbox/     # sops-encrypted runtime config + lockctl
     harbor/      # stack metadata + harborctl compose deployer
     key/         # bootstrap secrets bundles
@@ -14,7 +15,16 @@ code/
     ops/         # fleet tooling / runbooks
     flakes/      # future nix-flake payloads
     dotfiles/    # chezmoi repo consumed by anvil
-    mani/        # this repository
+  web/
+    static/
+    react/
+    nextjs/
+    svelte/
+    solid/
+    npm/
+  service/
+    go/
+    typescript/
 ```
 
 > Skip personal/dev or org-specific forks for now. Add them later under the same structure once requirements are clear.
@@ -22,7 +32,7 @@ code/
 ## Getting started
 
 1. Install [mani](https://github.com/alajmo/mani) (>=0.25). `curl -sfL https://raw.githubusercontent.com/alajmo/mani/main/install.sh | sh` works on Ubuntu 24.04.
-2. Clone this repo into `code/infra/mani`.
+2. Clone this repo into `~/org/Beta-Techno/infra/atlas`.
 3. From that directory run:
    ```bash
    mani list projects          # sanity-check manifest
