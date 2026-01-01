@@ -55,14 +55,20 @@ projects:
     desc: Chezmoi source for cross-host shell/editor setup
     tags: [infra, dev]
 
-  btech:
-    path: ../web/static/btech
-    url: git@github.com:Beta-Techno/btech.git
+  betatech-static:
+    path: ../../web/static/betatech
+    url: git@github.com:Beta-Techno/betatech.git
     desc: Static marketing site (Astro)
     tags: [web, static, infra]
 
+  betatech-solid:
+    path: ../../web/solid/betatech
+    url: git@github.com:Beta-Techno/betatech.git
+    desc: SolidJS variant of Betatech site
+    tags: [web, solid, infra]
+
   wiki:
-    path: ../web/react/wiki
+    path: ../../web/react/wiki
     url: git@github.com:Beta-Techno/wiki.git
     desc: React-based documentation/wiki frontend
     tags: [web, react, infra]
@@ -118,7 +124,7 @@ commands:
       - task: sync
       - task: bootstrap
   devdoc:
-    path: ../web/nextjs/devdoc
+    path: ../../web/nextjs/devdoc
     url: git@github.com:Beta-Techno/devdoc.git
     desc: Next.js developer documentation site
     tags: [web, nextjs, infra]
