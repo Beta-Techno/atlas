@@ -128,3 +128,147 @@ commands:
     url: git@github.com:Beta-Techno/devdoc.git
     desc: Next.js developer documentation site
     tags: [web, nextjs, infra]
+
+  pion:
+    path: ../../web/static/pion
+    url: git@github.com:Beta-Techno/pion.git
+    desc: Static marketing site
+    tags: [web, static, infra]
+
+  tele:
+    path: ../../web/static/tele
+    url: git@github.com:Beta-Techno/tele.git
+    desc: Static marketing site
+    tags: [web, static, infra]
+
+  dog:
+    path: ../../web/static/dog
+    url: git@github.com:Beta-Techno/dog.git
+    desc: Static marketing site
+    tags: [web, static, infra]
+
+  dontaco:
+    path: ../../web/static/dontaco
+    url: git@github.com:Beta-Techno/dontaco.git
+    desc: Static marketing site
+    tags: [web, static, infra]
+
+  tyler-realty:
+    path: ../../web/static/tyler-realty
+    url: git@github.com:Beta-Techno/tyler-realty.git
+    desc: Static marketing site
+    tags: [web, static, infra]
+
+  civct-static:
+    path: ../../web/static/civct
+    url: git@github.com:Beta-Techno/civct.git
+    desc: CIVCT marketing site
+    tags: [web, static, infra]
+
+  civct-monolith:
+    path: ../../web/monolith/civct
+    url: git@github.com:Beta-Techno/civct.git
+    desc: CIVCT ASP.NET monolith
+    tags: [web, monolith, infra]
+
+  build:
+    path: ../../web/nextjs/build
+    url: git@github.com:Beta-Techno/build.git
+    desc: Next.js site
+    tags: [web, nextjs, infra]
+
+  codec:
+    path: ../../web/react/codec
+    url: git@github.com:Beta-Techno/codec.git
+    desc: React application
+    tags: [web, react, infra]
+
+  qualia:
+    path: ../../web/react/qualia
+    url: git@github.com:Beta-Techno/qualia.git
+    desc: React application
+    tags: [web, react, infra]
+
+  redray:
+    path: ../../web/react/redray
+    url: git@github.com:Beta-Techno/redray.git
+    desc: React application
+    tags: [web, react, infra]
+
+  pos:
+    path: ../../web/svelte/pos
+    url: git@github.com:Beta-Techno/pos.git
+    desc: Svelte POS app
+    tags: [web, svelte, infra]
+
+  comms:
+    path: ../../web/svelte/comms
+    url: git@github.com:Beta-Techno/comms.git
+    desc: Svelte communications portal
+    tags: [web, svelte, infra]
+
+  beta-pack:
+    path: ../../web/npm/beta-pack
+    url: git@github.com:Beta-Techno/beta-pack.git
+    desc: Shared npm package
+    tags: [web, npm, infra]
+
+  goo:
+    path: ../goo
+    url: git@github.com:Beta-Techno/goo.git
+    desc: Internal Go tooling
+    tags: [infra, tools]
+
+  gate:
+    path: ../../service/go/gate
+    url: git@github.com:Beta-Techno/gate.git
+    desc: Go service
+    tags: [service, go, infra]
+
+  aips:
+    path: ../../service/go/aips
+    url: git@github.com:Beta-Techno/aips.git
+    desc: Go service
+    tags: [service, go, infra]
+
+  postal:
+    path: ../../service/go/postal
+    url: git@github.com:Beta-Techno/postal.git
+    desc: Go service
+    tags: [service, go, infra]
+
+  bion:
+    path: ../../service/go/bion
+    url: git@github.com:Beta-Techno/bion.git
+    desc: Go service
+    tags: [service, go, infra]
+
+  beam:
+    path: ../../service/go/beam
+    url: git@github.com:Beta-Techno/beam.git
+    desc: Go service
+    tags: [service, go, infra]
+
+  socials:
+    path: ../../service/typescript/socials
+    url: git@github.com:Beta-Techno/socials.git
+    desc: TypeScript service
+    tags: [service, typescript, infra]
+
+  twil:
+    path: ../../service/typescript/twil
+    url: git@github.com:Beta-Techno/twil.git
+    desc: TypeScript service
+    tags: [service, typescript, infra]
+
+  codehub:
+    path: ../../service/typescript/codehub
+    url: git@github.com:Beta-Techno/codehub.git
+    desc: TypeScript service
+    tags: [service, typescript, infra]
+
+  gogh:
+    path: ../../service/typescript/gogh
+    url: git@github.com:Beta-Techno/gogh.git
+    desc: TypeScript service
+    tags: [service, typescript, infra]
