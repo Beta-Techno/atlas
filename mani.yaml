@@ -165,8 +165,8 @@ commands:
     desc: CIVCT marketing site
     tags: [web, static, infra]
 
-  civct-monolith:
-    path: ../../web/monolith/civct
+  civct-mono:
+    path: ../../web/mono/civct
     url: git@github.com:Beta-Techno/civct.git
     desc: CIVCT ASP.NET monolith
     tags: [web, monolith, infra]
