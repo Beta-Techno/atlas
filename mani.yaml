@@ -61,6 +61,18 @@ projects:
     desc: Internal Go tooling
     tags: [infra, tools]
 
+  axis:
+    path: ../axis
+    url: git@github.com:Beta-Techno/axis.git
+    desc: CLI tool registry and launcher
+    tags: [infra, tools]
+
+  yard:
+    path: ../yard
+    url: git@github.com:Beta-Techno/yard.git
+    desc: Development environment manager
+    tags: [infra, tools]
+
   betatech-static:
     path: ../../web/static/betatech
     url: git@github.com:Beta-Techno/betatech.git
@@ -210,6 +222,13 @@ projects:
     url: git@github.com:Beta-Techno/gogh.git
     desc: TypeScript service
     tags: [service, typescript, infra]
+
+  posprint:
+    path: ../../service/typescript/posprint
+    url: git@github.com:Beta-Techno/posprint.git
+    desc: POS receipt printer gateway
+    tags: [service, typescript, infra]
+
 commands:
   status:
     desc: Show terse git status
